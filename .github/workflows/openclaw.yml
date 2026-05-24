@@ -39,9 +39,9 @@ jobs:
         with:
           tag: ${{ github.event.inputs.tag || 'latest' }}
           platform: linux/amd64,linux/arm64
-          imageName: ilteoood/openclaw
+          imageName: eomm/openclaw
           dockerFile: Dockerfile.openclaw
           label: version=${{ steps.latest_release.outputs.tag }}
           publish: true
-          dockerUser: ilteoood
+          dockerUser: ${{ secrets.DOCKER_HUB_USER }}
           dockerPassword: ${{ secrets.DOCKER_HUB_PASSWORD }}

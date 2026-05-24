@@ -29,8 +29,8 @@ jobs:
         with:
           tag: ${{ github.event.inputs.tag || 'latest' }}
           platform: linux/amd64,linux/arm64
-          imageName: ilteoood/hermes-agent
+          imageName: eomm/hermes-agent
           dockerFile: Dockerfile.hermes-agent
           publish: true
-          dockerUser: ilteoood
+          dockerUser: ${{ secrets.DOCKER_HUB_USER }}
           dockerPassword: ${{ secrets.DOCKER_HUB_PASSWORD }}

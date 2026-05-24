@@ -12,7 +12,7 @@ volumes:
 
 services:
   nullclaw:
-    image: ilteoood/nullclaw
+    image: eomm/nullclaw
     container_name: nullclaw
     environment:
       - NULLCLAW_MODE=gateway
@@ -27,7 +27,7 @@ services:
       - "3000:3000"
     restart: unless-stopped
   zeroclaw:
-    image: ilteoood/zeroclaw
+    image: eomm/zeroclaw
     container_name: zeroclaw
     volumes:
       - home:/root
@@ -40,7 +40,7 @@ services:
       - "42617:42617"
     restart: unless-stopped
   picoclaw:
-    image: ilteoood/picoclaw
+    image: eomm/picoclaw
     container_name: picoclaw
     environment:
       - PICOCLAW_MODE=gateway
@@ -55,7 +55,7 @@ services:
         mode: 0644
     restart: unless-stopped
   opencode:
-    image: ilteoood/opencode
+    image: eomm/opencode
     container_name: opencode
     volumes:
       - home:/root
@@ -66,7 +66,7 @@ services:
         mode: 0755
     restart: unless-stopped
   claude-code:
-    image: ilteoood/claude-code
+    image: eomm/claude-code
     container_name: claude-code
     volumes:
       - home:/root
@@ -77,7 +77,7 @@ services:
         mode: 0755
     restart: unless-stopped
   codex:
-    image: ilteoood/codex
+    image: eomm/codex
     container_name: codex
     volumes:
       - home:/root
@@ -88,7 +88,7 @@ services:
         mode: 0755
     restart: unless-stopped
   openclaw:
-    image: ilteoood/openclaw
+    image: eomm/openclaw
     container_name: openclaw
     volumes:
       - home:/root
@@ -101,13 +101,13 @@ services:
       - "18789:18789"
     restart: unless-stopped
   openfang:
-    image: ilteoood/openfang
+    image: eomm/openfang
     container_name: openfang
     volumes:
       - workspace:/home/workspace
     restart: unless-stopped
   copilot-cli:
-    image: ilteoood/copilot-cli
+    image: eomm/copilot-cli
     container_name: copilot-cli
     volumes:
       - home:/root
@@ -118,7 +118,7 @@ services:
         mode: 0755
     restart: unless-stopped
   hermes-agent:
-    image: ilteoood/hermes-agent
+    image: eomm/hermes-agent
     container_name: hermes-agent
     volumes:
       - home:/root

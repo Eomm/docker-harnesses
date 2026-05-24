@@ -49,9 +49,9 @@ jobs:
         with:
           tag: ${{ github.event.inputs.tag || 'latest' }}
           platform: linux/amd64,linux/arm64
-          imageName: ilteoood/claude-code
+          imageName: eomm/claude-code
           dockerFile: Dockerfile.claude-code
           label: claude_code_version=${{ steps.latest_release.outputs.tag }},paseo_version=${{ steps.latest_paseo.outputs.tag }}
           publish: true
-          dockerUser: ilteoood
+          dockerUser: ${{ secrets.DOCKER_HUB_USER }}
           dockerPassword: ${{ secrets.DOCKER_HUB_PASSWORD }}

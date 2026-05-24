@@ -1,6 +1,6 @@
 # docker-harnesses
 
-Ready-to-run, multi-arch Docker images for AI coding assistants and personal AI tools — automatically built and published to [Docker Hub](https://hub.docker.com/u/ilteoood).
+Ready-to-run, multi-arch Docker images for AI coding assistants and personal AI tools — automatically built and published to [Docker Hub](https://hub.docker.com/u/Eomm).
 
 ---
 
@@ -12,16 +12,16 @@ Ready-to-run, multi-arch Docker images for AI coding assistants and personal AI 
 
 | Image | Upstream Project | Base Image | Ports | Build Status | Build Schedule |
 |---|---|---|---|---|---|
-| [`ilteoood/zeroclaw`](https://hub.docker.com/r/ilteoood/zeroclaw) | [zeroclaw-labs/zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) | Ubuntu 24.04 | `42617` | ![ZeroClaw](https://github.com/ilteoood/docker-harnesses/workflows/ZeroClaw/badge.svg?branch=main) | Weekly (Mon) |
-| [`ilteoood/nullclaw`](https://hub.docker.com/r/ilteoood/nullclaw) | [nullclaw/nullclaw](https://github.com/nullclaw/nullclaw) | Ubuntu 24.04 | `3000` | ![NullClaw](https://github.com/ilteoood/docker-harnesses/workflows/NullClaw/badge.svg?branch=main) | Weekly (Mon) |
-| [`ilteoood/openclaw`](https://hub.docker.com/r/ilteoood/openclaw) | [openclaw/openclaw](https://github.com/openclaw/openclaw) | `ghcr.io/openclaw/openclaw:latest` | `18789` | ![OpenClaw](https://github.com/ilteoood/docker-harnesses/workflows/OpenClaw/badge.svg?branch=main) | Daily |
-| [`ilteoood/opencode`](https://hub.docker.com/r/ilteoood/opencode) | [opencode-ai](https://www.npmjs.com/package/opencode-ai) (npm) | Node.js LTS slim | — | ![OpenCode](https://github.com/ilteoood/docker-harnesses/workflows/OpenCode/badge.svg?branch=main) | Daily |
-| [`ilteoood/openfang`](https://hub.docker.com/r/ilteoood/openfang) | [RightNow-AI/openfang](https://github.com/RightNow-AI/openfang) | Ubuntu 24.04 | — | ![OpenFang](https://github.com/ilteoood/docker-harnesses/workflows/OpenFang/badge.svg?branch=main) | Daily |
-| [`ilteoood/picoclaw`](https://hub.docker.com/r/ilteoood/picoclaw) | [sipeed/picoclaw](https://github.com/sipeed/picoclaw) | Ubuntu 24.04 | `18790` | ![PicoClaw](https://github.com/ilteoood/docker-harnesses/workflows/PicoClaw/badge.svg?branch=main) | Weekly (Mon) |
-| [`ilteoood/claude-code`](https://hub.docker.com/r/ilteoood/claude-code) | [@anthropic-ai/claude-code](https://www.npmjs.com/package/@anthropic-ai/claude-code) (npm) | Node.js LTS slim | — | ![ClaudeCode](https://github.com/ilteoood/docker-harnesses/workflows/ClaudeCode/badge.svg?branch=main) | Daily |
-| [`ilteoood/codex`](https://hub.docker.com/r/ilteoood/codex) | [@openai/codex](https://www.npmjs.com/package/@openai/codex) (npm) | Node.js LTS slim | — | ![Codex](https://github.com/ilteoood/docker-harnesses/workflows/Codex/badge.svg?branch=main) | Daily |
-| [`ilteoood/hermes-agent`](https://hub.docker.com/r/ilteoood/hermes-agent) | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | nousresearch/hermes-agent:latest | — | ![HermesAgent](https://github.com/ilteoood/docker-harnesses/workflows/HermesAgent/badge.svg?branch=main) | Daily |
-| [`ilteoood/copilot-cli`](https://hub.docker.com/r/ilteoood/copilot-cli) | [@github/copilot](https://www.npmjs.com/package/@github/copilot) (npm) | Node.js LTS slim | — | ![CopilotCLI](https://github.com/ilteoood/docker-harnesses/workflows/CopilotCLI/badge.svg?branch=main) | Daily |
+| [`Eomm/zeroclaw`](https://hub.docker.com/r/Eomm/zeroclaw) | [zeroclaw-labs/zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) | Ubuntu 24.04 | `42617` | ![ZeroClaw](https://github.com/Eomm/docker-harnesses/workflows/ZeroClaw/badge.svg?branch=main) | Weekly (Mon) |
+| [`Eomm/nullclaw`](https://hub.docker.com/r/Eomm/nullclaw) | [nullclaw/nullclaw](https://github.com/nullclaw/nullclaw) | Ubuntu 24.04 | `3000` | ![NullClaw](https://github.com/Eomm/docker-harnesses/workflows/NullClaw/badge.svg?branch=main) | Weekly (Mon) |
+| [`Eomm/openclaw`](https://hub.docker.com/r/Eomm/openclaw) | [openclaw/openclaw](https://github.com/openclaw/openclaw) | `ghcr.io/openclaw/openclaw:latest` | `18789` | ![OpenClaw](https://github.com/Eomm/docker-harnesses/workflows/OpenClaw/badge.svg?branch=main) | Daily |
+| [`Eomm/opencode`](https://hub.docker.com/r/Eomm/opencode) | [opencode-ai](https://www.npmjs.com/package/opencode-ai) (npm) | Node.js LTS slim | — | ![OpenCode](https://github.com/Eomm/docker-harnesses/workflows/OpenCode/badge.svg?branch=main) | Daily |
+| [`Eomm/openfang`](https://hub.docker.com/r/Eomm/openfang) | [RightNow-AI/openfang](https://github.com/RightNow-AI/openfang) | Ubuntu 24.04 | — | ![OpenFang](https://github.com/Eomm/docker-harnesses/workflows/OpenFang/badge.svg?branch=main) | Daily |
+| [`Eomm/picoclaw`](https://hub.docker.com/r/Eomm/picoclaw) | [sipeed/picoclaw](https://github.com/sipeed/picoclaw) | Ubuntu 24.04 | `18790` | ![PicoClaw](https://github.com/Eomm/docker-harnesses/workflows/PicoClaw/badge.svg?branch=main) | Weekly (Mon) |
+| [`Eomm/claude-code`](https://hub.docker.com/r/Eomm/claude-code) | [@anthropic-ai/claude-code](https://www.npmjs.com/package/@anthropic-ai/claude-code) (npm) | Node.js LTS slim | — | ![ClaudeCode](https://github.com/Eomm/docker-harnesses/workflows/ClaudeCode/badge.svg?branch=main) | Daily |
+| [`Eomm/codex`](https://hub.docker.com/r/Eomm/codex) | [@openai/codex](https://www.npmjs.com/package/@openai/codex) (npm) | Node.js LTS slim | — | ![Codex](https://github.com/Eomm/docker-harnesses/workflows/Codex/badge.svg?branch=main) | Daily |
+| [`Eomm/hermes-agent`](https://hub.docker.com/r/Eomm/hermes-agent) | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | nousresearch/hermes-agent:latest | — | ![HermesAgent](https://github.com/Eomm/docker-harnesses/workflows/HermesAgent/badge.svg?branch=main) | Daily |
+| [`Eomm/copilot-cli`](https://hub.docker.com/r/Eomm/copilot-cli) | [@github/copilot](https://www.npmjs.com/package/@github/copilot) (npm) | Node.js LTS slim | — | ![CopilotCLI](https://github.com/Eomm/docker-harnesses/workflows/CopilotCLI/badge.svg?branch=main) | Daily |
 
 ---
 
@@ -38,7 +38,7 @@ Personal AI Assistant — zero overhead, zero compromise, 100% Rust, 100% agnost
 - **Exposed port:** `42617`
 
 ```sh
-docker run --name zeroclaw -v /path/to/home:/root -p 42617:42617 ilteoood/zeroclaw
+docker run --name zeroclaw -v /path/to/home:/root -p 42617:42617 Eomm/zeroclaw
 ```
 
 Once running, the ZeroClaw gateway is accessible at `http://localhost:42617`.
@@ -55,7 +55,7 @@ A static Zig binary — the smallest fully autonomous AI assistant infrastructur
 - **Exposed port:** `3000`
 
 ```sh
-docker run --name nullclaw -p 3000:3000 ilteoood/nullclaw
+docker run --name nullclaw -p 3000:3000 Eomm/nullclaw
 ```
 
 ### OpenClaw
@@ -66,7 +66,7 @@ docker run --name nullclaw -p 3000:3000 ilteoood/nullclaw
 - **Exposed port:** `18789`
 
 ```sh
-docker run --name openclaw -p 18789:18789 ilteoood/openclaw
+docker run --name openclaw -p 18789:18789 Eomm/openclaw
 ```
 
 ### OpenCode
@@ -76,7 +76,7 @@ docker run --name openclaw -p 18789:18789 ilteoood/openclaw
 - **Build process:** Installs the latest `opencode-ai` npm package globally on a Node.js LTS slim base.
 
 ```sh
-docker run --name opencode -v /path/to/home:/root ilteoood/opencode
+docker run --name opencode -v /path/to/home:/root Eomm/opencode
 ```
 
 ### OpenFang
@@ -86,7 +86,7 @@ docker run --name opencode -v /path/to/home:/root ilteoood/opencode
 - **Build process:** The Rust binary is cross-compiled from the latest upstream release of [RightNow-AI/openfang](https://github.com/RightNow-AI/openfang).
 
 ```sh
-docker run --name openfang ilteoood/openfang
+docker run --name openfang Eomm/openfang
 ```
 
 ### PicoClaw
@@ -101,7 +101,7 @@ A standalone [PicoClaw](https://github.com/sipeed/picoclaw) container.
 - **Exposed port:** `18790`
 
 ```sh
-docker run --name picoclaw -p 18790:18790 ilteoood/picoclaw
+docker run --name picoclaw -p 18790:18790 Eomm/picoclaw
 ```
 
 ### Claude Code
@@ -111,7 +111,7 @@ docker run --name picoclaw -p 18790:18790 ilteoood/picoclaw
 - **Build process:** Installs the latest `@anthropic-ai/claude-code` and `@getpaseo/cli` npm packages globally on a Node.js LTS slim base.
 
 ```sh
-docker run --name claude-code -v /path/to/home:/root ilteoood/claude-code
+docker run --name claude-code -v /path/to/home:/root Eomm/claude-code
 ```
 
 ### Codex CLI
@@ -121,7 +121,7 @@ docker run --name claude-code -v /path/to/home:/root ilteoood/claude-code
 - **Build process:** Installs the latest `@openai/codex` npm package globally on a Node.js LTS slim base.
 
 ```sh
-docker run --name codex -v /path/to/home:/root ilteoood/codex
+docker run --name codex -v /path/to/home:/root Eomm/codex
 ```
 
 ### GitHub Copilot CLI
@@ -131,7 +131,7 @@ docker run --name codex -v /path/to/home:/root ilteoood/codex
 - **Build process:** Installs the latest `@github/copilot` npm package globally on a Node.js LTS slim base.
 
 ```sh
-docker run --name copilot -v /path/to/home:/root ilteoood/copilot-cli
+docker run --name copilot -v /path/to/home:/root Eomm/copilot-cli
 ```
 
 ### Hermes Agent
@@ -145,7 +145,7 @@ A flexible AI agent framework from NousResearch, configurable with multiple LLM 
 - **Exposed port:** None (CLI tool)
 
 ```sh
-docker run --name hermes-agent -v /path/to/home:/root ilteoood/hermes-agent
+docker run --name hermes-agent -v /path/to/home:/root Eomm/hermes-agent
 ```
 
 ---
@@ -163,7 +163,7 @@ configs:
 
 services:
   zeroclaw:
-    image: ilteoood/zeroclaw
+    image: Eomm/zeroclaw
     configs:
       - source: init_script
         target: /usr/local/bin/init
@@ -233,7 +233,7 @@ All images are built and published automatically using [GitHub Actions](https://
 
 - **Trigger:** Push to `main`, manual dispatch, or a scheduled cron job.
 - **Schedule:** Most images are rebuilt daily at 03:00 UTC; NullClaw, PicoClaw, and ZeroClaw are rebuilt weekly on Mondays.
-- **Multi-arch builds** are performed with [`ilteoood/docker_buildx`](https://github.com/ilteoood/docker_buildx).
+- **Multi-arch builds** are performed with [`Eomm/docker_buildx`](https://github.com/Eomm/docker_buildx).
 - **Rust images** (ZeroClaw, OpenFang) use [`houseabsolute/actions-rust-cross`](https://github.com/houseabsolute/actions-rust-cross) for cross-compilation.
 - **Dependabot** is configured to check for Docker base-image updates daily.
 

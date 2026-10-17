@@ -22,7 +22,7 @@ Ready-to-run, multi-arch Docker images for AI coding assistants and personal AI 
 | [`Eomm/codex`](https://hub.docker.com/r/Eomm/codex) | [@openai/codex](https://www.npmjs.com/package/@openai/codex) (npm) | Node.js LTS slim | — | ![Codex](https://github.com/Eomm/docker-harnesses/workflows/Codex/badge.svg?branch=main) | Daily |
 | [`Eomm/hermes-agent`](https://hub.docker.com/r/Eomm/hermes-agent) | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | nousresearch/hermes-agent:latest | — | ![HermesAgent](https://github.com/Eomm/docker-harnesses/workflows/HermesAgent/badge.svg?branch=main) | Daily |
 | [`Eomm/copilot-cli`](https://hub.docker.com/r/Eomm/copilot-cli) | [@github/copilot](https://www.npmjs.com/package/@github/copilot) (npm) | Node.js LTS slim | — | ![CopilotCLI](https://github.com/Eomm/docker-harnesses/workflows/CopilotCLI/badge.svg?branch=main) | Daily |
-| [`Eomm/paseo-with-pi-agent`](https://hub.docker.com/r/Eomm/paseo-with-pi-agent) | [Paseo](https://paseo.sh) + [@earendil-works/pi-coding-agent](https://www.npmjs.com/package/@earendil-works/pi-coding-agent) (npm, v1) | `ghcr.io/getpaseo/paseo:latest` | `6767` | ![PaseoWithPi](https://github.com/Eomm/docker-harnesses/workflows/PaseoWithPi/badge.svg?branch=main) | Daily |
+| [`Eomm/paseo-with-pi-agent`](https://hub.docker.com/r/Eomm/paseo-with-pi-agent) | [Paseo](https://paseo.sh) + [@earendil-works/pi-coding-agent](https://www.npmjs.com/package/@earendil-works/pi-coding-agent) (npm, v1) | `ghcr.io/getpaseo/paseo:latest` | `6767` | ![PaseoWithPi](https://github.com/Eomm/docker-harnesses/workflows/PaseoWithPi/badge.svg?branch=main) | Weekly (Mon) |
 
 ---
 
@@ -263,7 +263,7 @@ docker compose up -d
 All images are built and published automatically using [GitHub Actions](https://github.com/features/actions):
 
 - **Trigger:** Push to `main`, manual dispatch, or a scheduled cron job.
-- **Schedule:** Most images are rebuilt daily at 03:00 UTC; NullClaw, PicoClaw, and ZeroClaw are rebuilt weekly on Mondays.
+- **Schedule:** Most images are rebuilt daily at 03:00 UTC; NullClaw, PicoClaw, ZeroClaw, and Paseo with Pi are rebuilt weekly on Mondays.
 - **Multi-arch builds** are performed with [`Eomm/docker_buildx`](https://github.com/Eomm/docker_buildx).
 - **Rust images** (ZeroClaw, OpenFang) use [`houseabsolute/actions-rust-cross`](https://github.com/houseabsolute/actions-rust-cross) for cross-compilation.
 - **Dependabot** is configured to check for Docker base-image updates daily.

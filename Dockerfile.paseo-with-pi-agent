@@ -1,0 +1,46 @@
+# Paseo (https://paseo.sh) with the Pi coding agent (https://pi.dev) preinstalled.
+#
+# Paseo auto-discovers the local `pi` binary on PATH and runs it as an agent provider.
+#
+# Paths
+#   /workspace    Paseo working directory: mount the repositories agents work on here.
+#   /pi-agent     Pi agent directory (PI_CODING_AGENT_DIR): settings.json, auth.json,
+#                 models.json, mcp.json, sessions, extensions/, skills/, prompts/, themes/.
+#   /home/paseo   Home of the `paseo` user (uid/gid 1000): Paseo state lives in
+#                 /home/paseo/.paseo (PASEO_HOME), plus gh/git/XDG configs.
+#
+# Environment variables
+#   PASEO_PASSWORD        Password for the daemon API/WebSocket. Set it for any published port.
+#   PASEO_HOSTNAMES       Extra DNS names allowed to connect, e.g. "nas.local,.lan"
+#                         (IPs and localhost are always allowed).
+#   PASEO_LISTEN          Daemon listen address (default: 0.0.0.0:6767).
+#   PI_CODING_AGENT_DIR   Pi agent directory (default: /pi-agent).
+#   MINIMAX_API_KEY       API key for Pi's `minimax` provider (MINIMAX_CN_API_KEY for China).
+#                         Any other Pi provider key (ANTHROPIC_API_KEY, OPENAI_API_KEY, ...) works too.
+#
+# Ports
+#   6767                  Paseo web UI and daemon API.
+#
+# Mounted folders must be writable by uid 1000. Empty, root-owned folders are chowned on start.
+
+FROM ghcr.io/getpaseo/paseo:latest
+
+# Pi major version to track: rebuilds pick up the latest release within this major.
+ARG PI_MAJOR=1
+
+USER root
+
+RUN npm i -g --ignore-scripts "@earendil-works/pi-coding-agent@^${PI_MAJOR}" \
+    && npm cache clean --force \
+    && pi --version
+
+ENV PI_CODING_AGENT_DIR=/pi-agent
+
+RUN mkdir -p /workspace /pi-agent && chown paseo:paseo /workspace /pi-agent
+
+VOLUME ["/workspace", "/pi-agent"]
+
+COPY --chmod=755 paseo-with-pi-agent/* /usr/local/bin/
+
+# Stay root: the entrypoint drops privileges to the `paseo` user.
+ENTRYPOINT ["/usr/bin/tini", "--", "entrypoint"]

@@ -9,6 +9,7 @@ configs:
 volumes:
   home:
   workspace:
+  pi-agent:
 
 services:
   nullclaw:
@@ -127,4 +128,21 @@ services:
       - source: init_script
         target: /usr/local/bin/init
         mode: 0755
+    restart: unless-stopped
+  paseo-with-pi-agent:
+    image: eomm/paseo-with-pi-agent
+    container_name: paseo-with-pi-agent
+    environment:
+      - PASEO_PASSWORD=change-me
+      - MINIMAX_API_KEY=your-minimax-api-key
+    volumes:
+      - home:/home/paseo
+      - workspace:/workspace
+      - pi-agent:/pi-agent
+    configs:
+      - source: init_script
+        target: /usr/local/bin/init
+        mode: 0755
+    ports:
+      - "6767:6767"
     restart: unless-stopped

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+
+# Run user-customizable init script
+bash /usr/local/bin/init
+
+# Make sure the Pi agent directory exists and is owned by the paseo user
+: "${PI_CODING_AGENT_DIR:=/pi-agent}"
+export PI_CODING_AGENT_DIR
+mkdir -p "$PI_CODING_AGENT_DIR"
+if [[ "$(id -u)" == "0" && "$(stat -c "%u" "$PI_CODING_AGENT_DIR")" == "0" ]]; then
+  chown paseo:paseo "$PI_CODING_AGENT_DIR"
+fi
+
+# Start Paseo (drops privileges to the paseo user)
+echo "Starting Paseo with Pi $(pi --version)..."
+exec paseo-docker-entrypoint "$@"

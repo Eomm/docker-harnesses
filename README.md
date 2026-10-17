@@ -22,6 +22,7 @@ Ready-to-run, multi-arch Docker images for AI coding assistants and personal AI 
 | [`Eomm/codex`](https://hub.docker.com/r/Eomm/codex) | [@openai/codex](https://www.npmjs.com/package/@openai/codex) (npm) | Node.js LTS slim | — | ![Codex](https://github.com/Eomm/docker-harnesses/workflows/Codex/badge.svg?branch=main) | Daily |
 | [`Eomm/hermes-agent`](https://hub.docker.com/r/Eomm/hermes-agent) | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | nousresearch/hermes-agent:latest | — | ![HermesAgent](https://github.com/Eomm/docker-harnesses/workflows/HermesAgent/badge.svg?branch=main) | Daily |
 | [`Eomm/copilot-cli`](https://hub.docker.com/r/Eomm/copilot-cli) | [@github/copilot](https://www.npmjs.com/package/@github/copilot) (npm) | Node.js LTS slim | — | ![CopilotCLI](https://github.com/Eomm/docker-harnesses/workflows/CopilotCLI/badge.svg?branch=main) | Daily |
+| [`Eomm/paseo-with-pi-agent`](https://hub.docker.com/r/Eomm/paseo-with-pi-agent) | [Paseo](https://paseo.sh) + [@earendil-works/pi-coding-agent](https://www.npmjs.com/package/@earendil-works/pi-coding-agent) (npm, v1) | `ghcr.io/getpaseo/paseo:latest` | `6767` | ![PaseoWithPi](https://github.com/Eomm/docker-harnesses/workflows/PaseoWithPi/badge.svg?branch=main) | Daily |
 
 ---
 
@@ -148,6 +149,33 @@ A flexible AI agent framework from NousResearch, configurable with multiple LLM 
 docker run --name hermes-agent -v /path/to/home:/root Eomm/hermes-agent
 ```
 
+### Paseo with Pi
+
+[Paseo](https://paseo.sh) with the [Pi coding agent](https://pi.dev) preinstalled. Paseo auto-discovers the local `pi` binary and offers it as an agent provider.
+
+- **Dockerfile:** [`Dockerfile.paseo-with-pi-agent`](./Dockerfile.paseo-with-pi-agent)
+- **Architectures:** `linux/amd64`, `linux/arm64`
+- **Base image:** [`ghcr.io/getpaseo/paseo:latest`](https://paseo.sh/docs/docker)
+- **Build process:** Extends the official Paseo image with the latest v1 of the `@earendil-works/pi-coding-agent` npm package.
+- **Volumes:**
+  - `/workspace` — repositories Paseo agents work on
+  - `/pi-agent` — Pi agent directory (`PI_CODING_AGENT_DIR`): settings, credentials, models, sessions, extensions, skills
+  - `/home/paseo` — home of the `paseo` user (uid/gid `1000`), including Paseo state in `/home/paseo/.paseo`
+- **Environment variables:**
+  - `PASEO_PASSWORD` — password for the daemon API (set it for any published port)
+  - `PASEO_HOSTNAMES` — extra DNS names allowed to connect (e.g. `nas.local,.lan`)
+  - `MINIMAX_API_KEY` — API key for Pi's `minimax` provider (any other Pi provider key works too)
+- **Exposed port:** `6767` (web UI and daemon API)
+
+```sh
+docker run --name paseo -p 6767:6767 \
+  -e PASEO_PASSWORD=change-me -e MINIMAX_API_KEY=... \
+  -v /path/to/workspace:/workspace -v /path/to/pi-agent:/pi-agent -v /path/to/home:/home/paseo \
+  Eomm/paseo-with-pi-agent
+```
+
+Once running, the Paseo web UI is accessible at `http://localhost:6767`.
+
 ---
 
 ## Custom Initialization
@@ -196,7 +224,8 @@ docker compose up -d
 │   │   ├── picoclaw.yml
 │   │   ├── claude-code.yml
 │   │   ├── codex.yml
-│   │   └── copilot-cli.yml
+│   │   ├── copilot-cli.yml
+│   │   └── paseo-with-pi-agent.yml
 │   ├── dependabot.yml      # Automated Docker base-image updates
 │   └── funding.yml         # Sponsorship configuration
 ├── src/                    # ZeroClaw entrypoint & init scripts
@@ -208,6 +237,7 @@ docker compose up -d
 ├── picoclaw/             # PicoClaw entrypoint, init & download scripts
 ├── codex/                   # Codex CLI entrypoint & init scripts
 ├── copilot-cli/             # Copilot CLI entrypoint & init scripts
+├── paseo-with-pi-agent/     # Paseo with Pi entrypoint & init scripts
 ├── scripts/                # Build helper scripts for Rust binaries
 │   ├── binary_zeroclaw.sh
 │   └── binary_openfang.sh
@@ -221,6 +251,7 @@ docker compose up -d
 ├── Dockerfile.claude-code
 ├── Dockerfile.codex
 ├── Dockerfile.copilot-cli
+├── Dockerfile.paseo-with-pi-agent
 ├── docker-compose.yml
 └── README.md
 ```
